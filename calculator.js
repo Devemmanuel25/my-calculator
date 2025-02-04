@@ -2,7 +2,8 @@ const bigscreen = document.getElementById('bigscreen')
     const smallscreen = document.getElementById('smallscreen')
     let operator=''
     let firstval=''
-    let canclear= false 
+    let canclear= true 
+    bigscreen.value = '0'
     
     function displaynumber(num){
       if(canclear) {
@@ -15,10 +16,14 @@ const bigscreen = document.getElementById('bigscreen')
 
     function deleteone(){
     bigscreen.value = bigscreen.value.slice(0,-1)
+    if(bigscreen.value.length < '1'){
+        bigscreen.value = '0'
+        canclear = true
+    }
     }
 
     function clearscreen(){
-        bigscreen.value=''
+        bigscreen.value='0'
         smallscreen.value=''
         firstval = ''
         operator = ''
@@ -30,15 +35,19 @@ const bigscreen = document.getElementById('bigscreen')
 
         if (sym ==='√' ){
             smallscreen.value= sym + bigscreen.value 
-        }else{
+        }
+        else if (sym ==='-/+' ){
+            if(bigscreen.value !== '0'){
+            bigscreen.value= '-' + bigscreen.value 
+            }else{
+                smallscreen.value = 'negative(0)'
+            }
+        }
+        else{
             smallscreen.value=bigscreen.value+sym
         }
 
-        if (sym ==='-' ){
-            smallscreen.value= sym + bigscreen.value 
-        }else{
-            smallscreen.value=bigscreen.value+sym
-        }
+        
 
     
         firstval=bigscreen.value
