@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <div class="calculator" id="body">
+        <header>
+            <div class="header_logo">
+            <i class="bi bi-calculator"></i>
+            <h1>calculator</h1>
+            </div>
+
+            <div class="bar">
+                <div class="white" onclick="minimise()"><i class="fa-solid fa-minus"></i></div>
+                <div class="white" onclick="maximise()"><i class="fa-regular fa-square"></i></div>
+                <div class="red" onclick="closes()"><i class="fa-solid fa-xmark"></i></div>
+                
+            </div>
+        </header>
+        <div id="calculator">
+            <div class="display">
+                <input type="text" id="bigscreen" >
+                <input type="text" id="smallscreen" >
+            </div>
+
+            <div class="random-text">
+                <p class="disable">MC</p>
+                <p class="disable">MR</p>
+                <p class="able">M+</p>
+                <p class="able">M-</p>
+                <p class="able">MS</p>
+            </div>
+
+            <div class="buttons">
+                <button class="button" onclick="display('%')">%</button>
+                <button class="button" onclick=" clearscreen()">CE</button>
+                <button class="button" onclick=" clearscreen()">C</button>
+                <button class="button" onclick="deleteone()"><i class="fa-solid fa-delete-left"></i></button>
+
+                <button class="button" onclick="display('²')">x²</button>
+                <button class="button" onclick="display('√')"><i class="fa-solid fa-square-root-variable"></i></i></button>
+                <button class="button"><i class="fa-solid fa-subscript"></i></button>
+                <button class="button"onclick="display('/')"><i class="fa-solid fa-divide"></i></button>
+
+
+                <button class="button" onclick="displaynumber(7)">7</button>
+                <button class="button" onclick="displaynumber(8)">8</button>
+                <button class="button" onclick="displaynumber(9)">9</button>
+                <button class="button" onclick="display('x')"><i class="fa-solid fa-xmark"></i></button>
+
+                <button class="button" onclick="displaynumber(4)">4</button>
+                <button class="button" onclick="displaynumber(5)">5</button>
+                <button class="button" onclick="displaynumber(6)">6</button>
+                <button class="button" onclick="display('-')"><i class="fa-solid fa-minus"></i></button>
+
+                <button class="button" onclick="displaynumber(1)">1</button>
+                <button class="button" onclick="displaynumber(2)">2</button>
+                <button class="button" onclick="displaynumber(3)">3</button>
+                <button class="button" onclick="display('+')"><i class="fa-solid fa-plus"></i></button>
+
+                <button class="button"onclick="display('-')"><i class="fa-solid fa-plus-minus"></i></button>
+                <button class="button" onclick="displaynumber(0)">0</button>
+                <button class="button" onclick="displaynumber('.')">.</button>
+
+
+                <button id="equals" style="background-color: rgb(60, 60, 234);" onclick="solve()">=</button>
+            </div>    
+         </div>
+    </div>
+</body>
+<script src="./calculator.js"></script>
+</html>
+
+
+
+    
